@@ -1,0 +1,46 @@
+//poder acceder a la cantidad que ingresa el usuario
+let cantidad = document.getElementById('cantidad');
+//poder acceder al boton 
+let boton = document.getElementById('generar');
+
+let contrasena = document.getElementById('contrasena');
+
+const cadenaCaracteres = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz'
+
+//darle funcionalidad al boton 
+function generar(){
+    let numeroDigitado = parseInt (cantidad.value);
+    //console.log(numeroDigitado); 
+    if(numeroDigitado < 8){
+        alert("La cantidad de caracteres tiene que ser mayor que 8");
+    }
+
+    let password = '';
+    for(let i = 0; i < numeroDigitado; i ++ ){
+
+        let caracterAleatorio = cadenaCaracteres[Math.floor(Math.random() * cadenaCaracteres.length)];
+        console.log(caracterAleatorio);
+
+        password+=caracterAleatorio;
+    }
+    //console.log('password:' + password);
+    contrasena.value = password;
+
+}
+
+//let texto = "texto";
+//console.log(typeof cantidad);//console. log nos ayuda a visualizar los codigos o probar las salidas de los codigos
+//metodo typeof para mandar llamar la variable
+
+
+
+
+
+
+
+
+
+
+
+
+
